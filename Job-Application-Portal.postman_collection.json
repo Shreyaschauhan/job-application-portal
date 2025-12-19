@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "ce3fd33f-bbee-460a-ad5d-9e4292cf06d6",
+		"name": "job-application-portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39170539",
+		"_collection_link": "https://interstellar-rocket-591403.postman.co/workspace/bf47f072-fc9a-49b2-b09d-4c68c52a7328/collection/39170539-ce3fd33f-bbee-460a-ad5d-9e4292cf06d6?action=share&source=collection_link&creator=39170539"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Shreyas\",\n  \"email\": \"shreyas@test.com\",\n  \"password\": \"123456\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"shreyas@test.com\",\n  \"password\": \"123456\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seed Jobs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"shreyas@test.com\",\n  \"password\": \"123456\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/jobs/seed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"jobs",
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Jobs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"shreyas@test.com\",\n  \"password\": \"123456\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply for Job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NDNkNDE3ZDBiOWZlNmMxZjJhNzgwYSIsImlhdCI6MTc2NjEzMjcwMywiZXhwIjoxNzY2NzM3NTAzfQ.moDxu2taZcV3xPRH7IrE9cLwwgRpgsZUFbumvGit5oA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "resume",
+							"type": "file",
+							"src": "/Users/shreyas/Downloads/resume.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/applications/6944ef50e84871fa7fd22728",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"applications",
+						"6944ef50e84871fa7fd22728"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View My Applications",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NDNkNDE3ZDBiOWZlNmMxZjJhNzgwYSIsImlhdCI6MTc2NjEzMjg5NSwiZXhwIjoxNzY2NzM3Njk1fQ.PLwIdEnFwNTC_ty1TcSKXM_xY_7GkEhXiokHUHJHLX8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "resume",
+							"type": "file",
+							"src": "/Users/shreyas/Downloads/resume.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/applications/my",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"applications",
+						"my"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
