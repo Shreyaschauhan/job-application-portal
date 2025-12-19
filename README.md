@@ -32,14 +32,14 @@ Candidates can register, upload resumes, apply for jobs, and track their applica
 ```bash
 git clone https://github.com/Shreyaschauhan/job-application-portal
 cd job-application-portal
-
 npm install
+npm run dev
 
 PORT=3000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 
-npm run dev
+```md
 
 API Endpoints
 🔐 Authentication
@@ -48,17 +48,23 @@ POST /api/auth/register – Register a new user
 
 POST /api/auth/login – Login user
 
+```md
+
 💼 Jobs
 
 GET /api/jobs – Get all job listings
 
 POST /api/jobs/seed – Create sample jobs (run once)
 
+```md
+
 📄 Applications
 
 POST /api/applications/:jobId – Apply for a job (JWT required, resume upload)
 
 GET /api/applications/my – View logged-in user's applications (JWT required)
+
+```md
 
 Resume Upload
 
@@ -69,21 +75,16 @@ Uploaded files are stored in the /uploads directory
 Resumes can be accessed via:
 /uploads/<filename>
 
+```md
+
 API Testing
 
 All API endpoints were tested using Postman.
 Postman collection file is included in the repository.
 
+```md
+
 Live Deployment
 
-Live API URL:
+Live API URL:https://job-application-portal-g06q.onrender.com/
 
-Security Best Practices
-
-Passwords are hashed before storing
-
-JWT used for authentication and route protection
-
-Sensitive data stored using environment variables
-
-.env file is excluded from version control
